@@ -46,19 +46,17 @@ class TicTacToe
     return @board[idx] == " " && idx.between?(0,8)
   end
 
-
-
-    def turn
-      idx = ''
-      input = ''
-      loop do
-        puts "Enter position between 1-9: "
-        input = gets.chomp.strip
-        idx = input_to_index(input)
-        break if (valid_move?(idx))
-      end
-        move(idx, current_player)
-        display_board
+  def turn
+    idx = ''
+    input = ''
+    loop do
+      puts "Enter position between 1-9: "
+      input = gets.chomp.strip
+      idx = input_to_index(input)
+      break if (valid_move?(idx))
+    end
+    move(idx, current_player)
+    display_board
   end
 
   def won?
