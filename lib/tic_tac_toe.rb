@@ -65,12 +65,10 @@ class TicTacToe
     return false
   end
 
-  def full?
-    if @board.any? { |x| x == " "}
-      return false
-    else
-      true
-    end
+
+  
+    def full?
+    return !(@board.include?(' '))
   end
 
   def draw?
