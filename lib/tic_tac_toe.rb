@@ -43,11 +43,7 @@ class TicTacToe
   end
 
   def valid_move?(idx)
-    if @board[idx] == " " && index > -1 && index < 9
-      return true
-    else
-      return false
-    end
+    return @board[idx] == " " && idx.between?(0,8)
   end
 
   def turn
