@@ -65,9 +65,7 @@ class TicTacToe
     return false
   end
 
-
-  
-    def full?
+  def full?
     return !(@board.include?(' '))
   end
 
