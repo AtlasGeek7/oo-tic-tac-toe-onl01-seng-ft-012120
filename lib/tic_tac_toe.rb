@@ -19,7 +19,7 @@ class TicTacToe
   end
  
   def turn_count
-    @board.count{|token| token == "X" || token == "O"}
+    @board.count{|tok| tok == "X" || tok == "O"}
   end
  
   def display_board
@@ -30,20 +30,16 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
   
-  def input_to_index(index)
-    index.to_i - 1
+  def input_to_index(idx)
+    idx.to_i - 1
   end
 
-  def move(index, token = "X")
-    @board[index] = token
+  def move(idx, tok = "X")
+    @board[idx] = tok
   end
     
-  def position_taken?(index)
-    if @board[index] == "X" || @board[index] == "O"
-      return true
-    else
-      return false
-    end
+  def position_taken?(idx)
+    return@board[idx] == "X" || @board[idx] == "O"
   end
 
   def valid_move?(index)
